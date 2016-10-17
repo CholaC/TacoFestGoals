@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Course Info"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:text="Course Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <EditText
+        android:id="@+id/courseName"
+        android:layout_height="wrap_content"
+        android:hint="COMP1234"
+        android:inputType="text"
+        android:layout_width="fill_parent">
+    </EditText>
+
+    <TextView
+        android:text="Number of Assignments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <EditText
+        android:id="@+id/numAss"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:inputType="number"
+        android:layout_width="fill_parent">
+    </EditText>
+
+    <TextView
+        android:text="Number of Quizzes/Tests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <EditText
+        android:id="@+id/numTest"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:inputType="number"
+        android:layout_width="fill_parent">
+    </EditText>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_width="fill_parent">
+    </Button>
+//I'm thinking we'll have another page to specify course items
+    //i.e. we'll 
+</LinearLayout>
