@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:app2=""
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.tacofest.goals.gradeDetiles">
+    tools:context="com.tacofest.goals.gradeDetiles"
+    android:background="?attr/colorControlNormal"
+    tools:background="@color/colorPrimaryDark">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -24,7 +25,8 @@
             android:textSize="24sp"
             android:gravity="top|center_vertical|center_horizontal|center"
             android:paddingBottom="10dp"
-            android:paddingTop="10dp" />
+            android:paddingTop="10dp"
+            tools:background="@color/black_overlay" />
 
     </android.support.design.widget.AppBarLayout>
 
