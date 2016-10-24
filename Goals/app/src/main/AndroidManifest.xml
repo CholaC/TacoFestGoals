@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".gradeDetiles"
+            android:label="@string/title_activity_grade_detiles"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".editGrades"
+            android:label="@string/title_activity_edit_grades"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
