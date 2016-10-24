@@ -26,4 +26,9 @@ public class CourseInfo extends AppCompatActivity {
         numTest = (EditText) findViewById(R.id.numTest);
         title = (TextView) findViewById(R.id.title);
     }
+
+    protected void openAssignPage() {
+
+    }
+
 }
