@@ -31,11 +31,11 @@ public class CourseInfo extends AppCompatActivity {
         title = (TextView) findViewById(R.id.title);
     }
 
-    protected void openAssignPage(View v) {
-        Intent i = new Intent(this, EnterAssign.class);
-        String num = numAss.getText().toString();
-        i.putExtra("num", num);
-        startActivity(i);
-    }
+   // protected void openAssignPage(View v) {
+       // Intent i = new Intent(this, EnterAssign.class);
+       // String num = numAss.getText().toString();
+        //i.putExtra("num", num);
+        //startActivity(i);
+    //}
 
 }

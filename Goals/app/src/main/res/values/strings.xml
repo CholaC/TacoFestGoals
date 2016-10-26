@@ -110,4 +110,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_grade_detiles">gradeDetiles</string>
     <string name="title_activity_edit_grades">editGrades</string>
+    <string name="activity_course_list">CourseList</string>
 </resources>

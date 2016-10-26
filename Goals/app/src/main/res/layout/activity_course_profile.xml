@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="152dp"
+        android:id="@+id/btngrade"
+        android:text="Grade" />
+
+    <Button
+        android:text="Progress Report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:id="@+id/btnprogressreport"
+        android:layout_below="@+id/btngrade"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="103dp" />
+
+    <Button
+        android:text="Schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnprogressreport"
+        android:layout_alignStart="@+id/btngrade"
+        android:layout_marginTop="70dp"
+        android:id="@+id/btnschedule" />
+
+    <TextView
+        android:text="COMP 3004"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="43dp"
+        android:id="@+id/txtCourseName"
+        android:textSize="30sp" />
+</RelativeLayout>

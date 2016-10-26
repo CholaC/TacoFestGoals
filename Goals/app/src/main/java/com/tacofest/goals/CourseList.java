@@ -20,4 +20,6 @@ public class CourseList extends AppCompatActivity {
         txtCourse = (TextView) findViewById(R.id.txtCourse);
         courseList = (ListView) findViewById(R.id.courseList);
     }
+
+
 }
