@@ -12,19 +12,19 @@ public class TableData {
     }
     public static abstract class TableInfo implements BaseColumns{
         //student table
-        public static final String STUDENT_NAME =  "student_name";
-        public static final String STUDENT_ID =  "student_id";
-        public static final String DATABASE_NAME =  "goals.db";
-        public static final String STUDENT_TABLE =  "student_table";
+        public static final String STUDENT_NAME     =  "student_name";
+        public static final String STUDENT_ID       =  "student_id";
+        public static final String DATABASE_NAME    =  "goals.db";
+        public static final String STUDENT_TABLE    =  "student_table";
 
-        //public static final String STUDENT_NAME =  "student_id";
-        public static final String COURSE_NAME =  "course_name";
-        public static final String COURSE_TABLE =  "course_table";
+        //course  table
+        public static final String COURSE_TABLE         =  "course_table";
+        public static final String COURSE_NAME          =    "course_name";
+        public static final String STU_ID               =    "stu_id";
+        public static final String TOTAL_PASSING_GRADE  =  "total_passing_grade";
+        public static final String TOTAL_DESIRED_GRADE  =  "total_desired_grade";
 
-
-
-
-
+        //public static final String TOTAL_PASSING_GRADE =  "course_table"
     }
 
 }

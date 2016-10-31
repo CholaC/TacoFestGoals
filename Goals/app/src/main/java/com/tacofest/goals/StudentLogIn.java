@@ -6,11 +6,14 @@ package com.tacofest.goals;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 public class StudentLogIn extends AppCompatActivity {
     EditText studentName, studentID;
     Button btnsignIn, btnsignUp;
@@ -29,16 +32,28 @@ public class StudentLogIn extends AppCompatActivity {
         btnsignIn = (Button) findViewById(R.id.btnsignin);
         btnsignUp = (Button) findViewById(R.id.btnsignup);
 
-        btnsignIn.setOnClickListener( new View.OnClickListener() {
+        btnsignUp.setOnClickListener( new View.OnClickListener() {
            public void onClick(View v) {
                username = studentName.getText().toString();
                studentid = studentID.getText().toString();
                DatabaseHelper databaseHelper = new DatabaseHelper(context);
                databaseHelper.addStudentdata(databaseHelper,studentid,username);
                databaseHelper.close();
+               Toast.makeText(getApplicationContext(),Environment.getDataDirectory().toString(),Toast.LENGTH_LONG).show();
                Intent i = new Intent(StudentLogIn.this, CourseList.class);
                startActivity(i);
            }
        });
+        btnsignIn.setOnClickListener( new View.OnClickListener() {
+            public void onClick(View v) {
+                //username = studentName.getText().toString();
+                //studentid = studentID.getText().toString();
+                //DatabaseHelper databaseHelper = new DatabaseHelper(context);
+                //databaseHelper.checkStudentdata(databaseHelper,studentid,username);
+                //databaseHelper.close();
+                Intent i = new Intent(StudentLogIn.this, CourseList.class);
+                startActivity(i);
+            }
+        });
     }
 }
