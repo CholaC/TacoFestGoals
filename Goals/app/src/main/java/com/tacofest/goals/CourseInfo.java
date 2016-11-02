@@ -1,8 +1,10 @@
 package com.tacofest.goals;
 
+import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,26 +18,49 @@ import android.view.View;
  */
 
 public class CourseInfo extends AppCompatActivity {
-    EditText courseName;
-    EditText numAss;
-    EditText numTest;
-    TextView title;
+    TextView courseInfo;
+    EditText courseName, desiredGrade, passingGrade, lectureDate;
+    String coursename, studentid, lecturedate;
+    Integer desiredgrade, passinggrade;
+    Button uploadPdf;
+    Button submit;
+    Context context = this;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_info);
 
+        courseInfo = (TextView) findViewById(R.id.txtCourseInfo);
         courseName = (EditText) findViewById(R.id.courseName);
-        numAss = (EditText) findViewById(R.id.numAss);
-        numTest = (EditText) findViewById(R.id.numTest);
-        title = (TextView) findViewById(R.id.title);
+        desiredGrade = (EditText) findViewById(R.id.tDesiredGrade);
+        passingGrade = (EditText) findViewById(R.id.tPassingGrade);
+        lectureDate = (EditText) findViewById(R.id.txtlecdate);
+        uploadPdf = (Button) findViewById(R.id.btnPDF);
+        submit = (Button) findViewById(R.id.btnSubmit);
+
+        Intent intent = getIntent();
+        Bundle bd = intent.getExtras();
+        if(bd != null)
+        {
+            String getId = (String) bd.get("studentId");
+            courseInfo.setText(getId);
+        }
+
+        submit.setOnClickListener( new View.OnClickListener() {
+            public void onClick(View v) {
+                coursename = courseName.getText().toString();
+                studentid = courseInfo.getText().toString();
+                desiredgrade = Integer.parseInt(desiredGrade.getText().toString());
+                passinggrade = Integer.parseInt(passingGrade.getText().toString());
+                lecturedate = lectureDate.getText().toString();
+
+                DatabaseHelper databaseHelper = new DatabaseHelper(context);
+                databaseHelper.addCourse(databaseHelper,coursename,studentid,passinggrade,desiredgrade,lecturedate);
+                databaseHelper.close();
+
+                Intent i = new Intent(CourseInfo.this, CourseList.class);
+                startActivity(i);
+            }
+        });
     }
-
-   // protected void openAssignPage(View v) {
-       // Intent i = new Intent(this, EnterAssign.class);
-       // String num = numAss.getText().toString();
-        //i.putExtra("num", num);
-        //startActivity(i);
-    //}
-
 }

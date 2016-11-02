@@ -13,7 +13,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/txtCourseInfo" />
+
+    <Button
+        android:text="Upload PDF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPDF" />
 
     <TextView
         android:text="Course Name"
@@ -33,16 +40,17 @@
     </EditText>
 
     <TextView
-        android:text="Number of Assignments"
+        android:text="Total Desired Grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/txtDesiredGrade" />
 
     <EditText
-        android:id="@+id/numAss"
+        android:id="@+id/tDesiredGrade"
         android:layout_height="wrap_content"
         android:hint="5"
         android:inputType="number"
@@ -50,7 +58,7 @@
     </EditText>
 
     <TextView
-        android:text="Number of Quizzes/Tests"
+        android:text="Total Passing Grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -59,21 +67,34 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <EditText
-        android:id="@+id/numTest"
+        android:id="@+id/tPassingGrade"
         android:layout_height="wrap_content"
         android:hint="5"
         android:inputType="number"
         android:layout_width="fill_parent">
     </EditText>
 
+    <TextView
+        android:text="Lecture Date and Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/txtlecdate"
+        android:inputType="text" />
+
     <Button
         android:layout_height="wrap_content"
         android:text="SUBMIT"
         android:layout_width="fill_parent"
-        android:id="@+id/button"
+        android:id="@+id/btnSubmit"
         style="@style/Widget.AppCompat.Button.Colored"
         android:elevation="0dp"
         android:onClick="openAssignPage">
     </Button>
-    
+
 </LinearLayout>

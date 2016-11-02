@@ -16,18 +16,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + TableData.TableInfo.STUDENT_ID + " TEXT PRIMARY KEY, "
             + TableData.TableInfo.STUDENT_NAME +" TEXT); ";
 
-    public String Create_Course_Query = "CREATE TABLE " + TableData.TableInfo.COURSE_TABLE + " ( "
-            + TableData.TableInfo.COURSE_NAME + " TEXT, "
-            + TableData.TableInfo.STU_ID+" TEXT, "
-            + TableData.TableInfo.TOTAL_PASSING_GRADE+" TEXT, "
-            + TableData.TableInfo.TOTAL_DESIRED_GRADE
-            +" TEXT, FOREIGN KEY("+ TableData.TableInfo.STU_ID+") REFERENCES "+ TableData.TableInfo.STUDENT_TABLE+
+        public String Create_Course_Query = "CREATE TABLE " + TableData.TableInfo.COURSE_TABLE + " ( "
+                + TableData.TableInfo.COURSE_NAME + " TEXT, "
+                + TableData.TableInfo.COURSE_STU_ID+" TEXT, "
+                + TableData.TableInfo.TOTAL_PASSING_GRADE+" INTEGER, "
+                + TableData.TableInfo.TOTAL_DESIRED_GRADE+" INTEGER, "
+                + TableData.TableInfo.FINAL_GRADE+" INTEGER, "
+                + TableData.TableInfo.AVERAGE_GRADE+" INTEGER, "
+                + TableData.TableInfo.LECTURE_TIME+" TEXT, "
+                + "FOREIGN KEY("+ TableData.TableInfo.COURSE_STU_ID+") REFERENCES "+ TableData.TableInfo.STUDENT_TABLE+
+                "("+ TableData.TableInfo.STUDENT_ID
+                +"), PRIMARY KEY("+ TableData.TableInfo.COURSE_NAME+", "+ TableData.TableInfo.COURSE_STU_ID+")); ";
+
+    public String Create_CourseWork_Query = "CREATE TABLE " + TableData.TableInfo.COURSEWORK_TABLE+ " ( "
+            + TableData.TableInfo.COURSEWORK_NAME +" TEXT, "
+            + TableData.TableInfo.COURSEWORK_COR_ID +" TEXT, "
+            + TableData.TableInfo.COURSEWORK_STU_ID +" TEXT, "
+            + TableData.TableInfo.WEIGHT  +" INTEGER, "
+            + TableData.TableInfo.PASSING_GRADE +" INTEGER, "
+            + TableData.TableInfo.DESIRED_GRADE +" INTEGER, "
+            + TableData.TableInfo.ACTUAL_GRADE +" INTEGER, "
+            + TableData.TableInfo.DUE_DATE +" TEXT,"
+            +" FOREIGN KEY("+ TableData.TableInfo.COURSEWORK_STU_ID+") REFERENCES "+ TableData.TableInfo.STUDENT_TABLE+
             "("+ TableData.TableInfo.STUDENT_ID
-            +"), PRIMARY KEY("+ TableData.TableInfo.COURSE_NAME+", "+ TableData.TableInfo.STU_ID+")); ";
+            +"), FOREIGN KEY("+ TableData.TableInfo.COURSEWORK_COR_ID+") REFERENCES "+ TableData.TableInfo.COURSE_TABLE+
+            "("+ TableData.TableInfo.COURSE_NAME
+            +"), PRIMARY KEY("+ TableData.TableInfo.COURSEWORK_NAME+", "+ TableData.TableInfo.COURSEWORK_COR_ID+", "+ TableData.TableInfo.COURSEWORK_STU_ID+")); ";
+
 
 
     public DatabaseHelper(Context context) {
-        super(context, TableData.TableInfo.DATABASE_NAME , null, 1);
+        super(context, TableData.TableInfo.DATABASE_NAME , null, 3);
         Log.e("database operation","database is opened");
     }
 
@@ -35,13 +54,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Create_Query);
         db.execSQL(Create_Course_Query);
+        db.execSQL(Create_CourseWork_Query);
         Log.e("database opertion","table created");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS"+ TableData.TableInfo.STUDENT_TABLE);
-        db.execSQL("DROP TABLE IF EXISTS"+ TableData.TableInfo.COURSE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+ TableData.TableInfo.STUDENT_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+ TableData.TableInfo.COURSE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+ TableData.TableInfo.COURSEWORK_TABLE);
         onCreate(db);
     }
 
@@ -62,16 +83,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     //FUNCTION TO ADD COURSES
 
-    public void addCourse(DatabaseHelper dbh, String courseName, String studentId, int tPassGrade, int tDesiredGrade){
+    public void addCourse(DatabaseHelper dbh, String courseName, String studentId, int tPassGrade, int tDesiredGrade,
+                          String lectureTime){
         SQLiteDatabase db = dbh.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(TableData.TableInfo.COURSE_NAME, courseName);
-        contentValues.put(TableData.TableInfo.STU_ID, studentId);
-        contentValues.put(TableData.TableInfo.TOTAL_DESIRED_GRADE, tDesiredGrade);
-        contentValues.put(TableData.TableInfo.TOTAL_PASSING_GRADE, tDesiredGrade);
+        contentValues.put(TableData.TableInfo.COURSE_STU_ID, studentId);
+        contentValues.put(TableData.TableInfo.TOTAL_PASSING_GRADE, String.valueOf(tPassGrade));
+        contentValues.put(TableData.TableInfo.TOTAL_DESIRED_GRADE, String.valueOf(tDesiredGrade));
+        contentValues.put(TableData.TableInfo.FINAL_GRADE, 0);
+        contentValues.put(TableData.TableInfo.AVERAGE_GRADE, 0);
+        contentValues.put(TableData.TableInfo.LECTURE_TIME, lectureTime);
         db.insert(TableData.TableInfo.COURSE_TABLE, null, contentValues);
         Log.e("database operation","one row entered in course table ");
     }
 
-    //retrieve course
 }
