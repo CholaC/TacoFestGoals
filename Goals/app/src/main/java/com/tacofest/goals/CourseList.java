@@ -31,9 +31,9 @@ public class CourseList extends AppCompatActivity {
 
         addCourse.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(CourseList.this, CourseInfo.class);
-                i.putExtra("studentId", txtCourse.getText());
-                startActivity(i);
+                //Intent i = new Intent(CourseList.this, CourseInfo.class);
+              //  i.putExtra("studentId", txtCourse.getText());
+               // startActivity(i);
             }
         });
     }
