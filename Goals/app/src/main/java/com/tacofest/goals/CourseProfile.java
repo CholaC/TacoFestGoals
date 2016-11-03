@@ -24,13 +24,11 @@ public class CourseProfile extends AppCompatActivity {
         schedule = (Button) findViewById(R.id.btnschedule);
 
         grade.setOnClickListener( new View.OnClickListener() {
-                                          public void onClick(View v) {
-                                              //myDb.insertStudentdata(studentID.getText().toString(),
-                                              // studentName.getText().toString());
-                                              Intent i = new Intent(CourseProfile.this, gradeDetiles.class);
-                                              startActivity(i);
-                                          }
-                                      }
+            public void onClick(View v) {
+                Intent i = new Intent(CourseProfile.this, gradeDetiles.class);
+                startActivity(i);
+            }
+        }
         );
     }
 }

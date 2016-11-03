@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Course Info"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/txtCourseInfo" />
+
+    <Button
+        android:text="Upload PDF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPDF" />
+
+    <TextView
+        android:text="Course Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <EditText
+        android:id="@+id/courseName"
+        android:layout_height="wrap_content"
+        android:hint="COMP1234"
+        android:inputType="text"
+        android:layout_width="fill_parent">
+    </EditText>
+
+    <TextView
+        android:text="Total Desired Grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/txtDesiredGrade" />
+
+    <EditText
+        android:id="@+id/tDesiredGrade"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:inputType="number"
+        android:layout_width="fill_parent">
+    </EditText>
+
+    <TextView
+        android:text="Total Passing Grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <EditText
+        android:id="@+id/tPassingGrade"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:inputType="number"
+        android:layout_width="fill_parent">
+    </EditText>
+
+    <TextView
+        android:text="Lecture Date and Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/txtlecdate"
+        android:inputType="text" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:text="FINISH"
+        android:layout_width="fill_parent"
+        android:id="@+id/btnFinish"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:elevation="0dp">
+    </Button>
+
+    <Button
+        android:text="Continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnProceed"
+        android:onClick="openAssignPage"></Button>
+
+
+</LinearLayout>
