@@ -1,79 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimaryDark">
 
-    <TextView
-        android:text="Course Info"
-        android:textSize="12pt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
-    <TextView
-        android:text="Course Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
-    <EditText
-        android:id="@+id/courseName"
-        android:layout_height="wrap_content"
-        android:hint="COMP1234"
-        android:inputType="text"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <TextView
-        android:text="Number of Assignments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
-    <EditText
-        android:id="@+id/numAss"
-        android:layout_height="wrap_content"
-        android:hint="5"
-        android:inputType="number"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <TextView
-        android:text="Number of Quizzes/Tests"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
-
-    <EditText
-        android:id="@+id/numTest"
-        android:layout_height="wrap_content"
-        android:hint="5"
-        android:inputType="number"
-        android:layout_width="fill_parent">
-    </EditText>
-
-    <Button
-        android:layout_height="wrap_content"
-        android:text="SUBMIT"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:id="@+id/button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:elevation="0dp"
-        android:onClick="openAssignPage">
-    </Button>
+        android:layout_height="match_parent"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp"
+        >
+
+        <TextView
+            android:text="#COURSE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cTitle"
+            android:textStyle="normal|bold"
+            android:textSize="50sp"
+            android:typeface="serif"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="61dp" />
+
+        <TextView
+            android:text="Course Code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cCode"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="COMP1234"
+            android:ems="10"
+            android:layout_below="@id/cCode"
+            android:id="@+id/cCodeInfo" />
+
+        <TextView
+            android:text="Goal Grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cCodeInfo"
+            android:id="@+id/dGrade"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="85"
+            android:ems="10"
+            android:layout_below="@id/dGrade"
+            android:id="@+id/dGradeInfo" />
+
+        <TextView
+            android:text="Passing Grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dGradeInfo"
+            android:id="@+id/pGrade"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="50"
+            android:ems="10"
+            android:layout_below="@id/pGrade"
+            android:id="@+id/pGradeInfo" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="CONTINUE"
+            android:layout_width="fill_parent"
+            android:id="@+id/button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:elevation="0dp"
+            android:onClick="openAssignPage"
+            android:background="@color/colorAccent"
+            android:layout_below="@+id/cCodeInfo"
+            android:layout_centerHorizontal="true">
+        </Button>
+    </LinearLayout>
     
-</LinearLayout>
+</ScrollView>

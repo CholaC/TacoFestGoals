@@ -1,20 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimaryDark">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lin"
-        ></LinearLayout>
-</LinearLayout>
+        android:id="@+id/enterAInfoList">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your course work here"
+            android:textColor="@android:color/background_light"/>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app=" "
+            xmlns:app2="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:text="Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:id="@+id/aNameTitle"
+                android:textColor="@android:color/background_light" />
+
+            <TextView
+                android:text="Due Date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/aName"
+                android:id="@+id/dDateTitle"
+                android:textColor="@android:color/background_light"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/dDate"
+                android:layout_below="@+id/dDateTitle"
+                android:layout_alignParentStart="true"
+                android:hint="DD-MM-YYYY" />
+
+            <TextView
+                android:text="Weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/dDate"
+                android:layout_toEndOf="@+id/aName"
+                android:id="@+id/aWeightTitle" />
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/aWeight"
+                android:layout_below="@+id/aWeightTitle"
+                android:layout_toEndOf="@+id/dDate"
+                android:inputType="number"
+                android:hint="6.5"
+                android:layout_width="50dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/aName"
+                android:layout_below="@+id/aNameTitle"
+                android:layout_alignParentStart="true"
+                android:hint="E.g. Roman civ. paper"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:text="%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/aPercent"
+                android:layout_alignBaseline="@+id/aWeight"
+                android:layout_alignBottom="@+id/aWeight"
+                android:layout_toEndOf="@+id/aWeight"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                android:textColor="@android:color/background_light"
+                android:layout_alignParentEnd="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/buttonRow"
+                android:layout_below="@+id/dDate"
+                android:layout_alignParentStart="true">
+
+                <Button
+                    android:text="FINISH"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/submitAButton"
+                    android:onClick="submitAInfo"
+                    android:background="@color/colorAccent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    app:fabSize="mini"
+                    app:srcCompat="@android:drawable/ic_input_add"
+                    android:id="@+id/addALayoutButton"
+                    android:onClick="addAInfoLayout"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+                ></RelativeLayout>
+
+
+        </RelativeLayout>
+        <Button
+            android:text="CONTINUE"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/contButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="contToOffice"
+            android:background="@color/colorAccent"
+            android:paddingTop="10dp" />
+    </LinearLayout>
+    ></ScrollView>
