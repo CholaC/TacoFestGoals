@@ -98,4 +98,129 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.e("database operation","one row entered in course table ");
     }
 
+    /*//update course table with final grade for student
+    * input: course name, studentid and final grade
+    * output: void*/
+    public void addFinalGrade(DatabaseHelper dbh, String courseName, String studentid, int finalGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.FINAL_GRADE,String.valueOf(finalGrade)); //These Fields should be your String values of actual column names
+       // myDB.update(TableName, cv, "_id="+id, null);
+        db.update(TableData.TableInfo.COURSE_TABLE,cv,
+                TableData.TableInfo.COURSE_STU_ID+" = "+studentid+" AND "+ TableData.TableInfo.COURSE_NAME+" = "+courseName,null);
+
+    }
+
+
+    /*//update course table with average grade for student
+    * input: course name, studentid and final grade
+    * output: void*/
+    public void addAverageGrade(DatabaseHelper dbh, String courseName, String studentid, int averageGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.AVERAGE_GRADE,String.valueOf(averageGrade)); //These Fields should be your String values of actual column names
+        // myDB.update(TableName, cv, "_id="+id, null);
+        db.update(TableData.TableInfo.COURSE_TABLE,cv,
+                TableData.TableInfo.COURSE_STU_ID+" = "+studentid+" AND "+ TableData.TableInfo.COURSE_NAME+" = "+courseName,null);
+    }
+
+    //update course table with total passing grade
+    public void addTotalPassGrade(DatabaseHelper dbh, String courseName, String studentid, int tPassGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.TOTAL_PASSING_GRADE,String.valueOf(tPassGrade)); //These Fields should be your String values of actual column names
+        // myDB.update(TableName, cv, "_id="+id, null);
+        db.update(TableData.TableInfo.COURSE_TABLE,cv,
+                TableData.TableInfo.COURSE_STU_ID+" = "+studentid+" AND "+ TableData.TableInfo.COURSE_NAME+" = "+courseName,null);
+    }
+
+    //update course table with total desired grade
+    public void addDesiredGrade(DatabaseHelper dbh, String courseName, String studentid, int tDesiredGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.TOTAL_DESIRED_GRADE,String.valueOf(tDesiredGrade)); //These Fields should be your String values of actual column names
+        // myDB.update(TableName, cv, "_id="+id, null);
+        db.update(TableData.TableInfo.COURSE_TABLE,cv,
+                TableData.TableInfo.COURSE_STU_ID+" = "+studentid+" AND "+ TableData.TableInfo.COURSE_NAME+" = "+courseName,null);
+    }
+
+    /*get Students course list
+    * input: String studentId
+    * output: Cursor array*/
+    public Cursor getStudentCourseList(DatabaseHelper dbh, String studentid){
+        Cursor cr;
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        cr = db.query(TableData.TableInfo.COURSE_TABLE, new String[]{TableData.TableInfo.COURSE_NAME},
+                TableData.TableInfo.COURSE_STU_ID+ "="+ studentid,null, null, null, null, null);
+        return cr;
+    }
+    /*************************COURSEWORK TABLE***************************/
+    /*get course info for student
+    input: String studentId
+    * output: Cursor*/
+    public void addCourseWork(DatabaseHelper dbh, String courseName, String studentId,
+                              String courseWorkName,String dueDate, int weight){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(TableData.TableInfo.COURSEWORK_NAME, courseWorkName);
+        contentValues.put(TableData.TableInfo.COURSEWORK_COR_ID, courseName);
+        contentValues.put(TableData.TableInfo.COURSEWORK_STU_ID, studentId);
+        contentValues.put(TableData.TableInfo.WEIGHT, String.valueOf(weight));
+        contentValues.put(TableData.TableInfo.PASSING_GRADE, 0);
+        contentValues.put(TableData.TableInfo.DESIRED_GRADE, 0);
+        contentValues.put(TableData.TableInfo.ACTUAL_GRADE, 0);
+        contentValues.put(TableData.TableInfo.LECTURE_TIME, dueDate);
+        db.insert(TableData.TableInfo.COURSEWORK_TABLE, null, contentValues);
+        Log.e("database operation","one row entered in course table ");
+    }
+
+    //add passing grade
+    public void addPassingGrade(DatabaseHelper dbh,String courseWorkName, String courseName, String studentid, int passingGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.PASSING_GRADE,String.valueOf(passingGrade)); //These Fields should be your String values of actual column names
+        db.update(TableData.TableInfo.COURSEWORK_TABLE,cv,
+                TableData.TableInfo.COURSEWORK_NAME+" = "+courseWorkName+" AND "+
+                        TableData.TableInfo.COURSEWORK_STU_ID+" = "+studentid+" AND "+
+                        TableData.TableInfo.COURSEWORK_COR_ID+" = "+courseName,null);
+    }
+
+    // add desired grade
+    public void addDesiredGrade(DatabaseHelper dbh,String courseWorkName, String courseName, String studentid, int desiredGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.DESIRED_GRADE,String.valueOf(desiredGrade)); //These Fields should be your String values of actual column names
+        db.update(TableData.TableInfo.COURSEWORK_TABLE,cv,
+                TableData.TableInfo.COURSEWORK_NAME+" = "+courseWorkName+" AND "+
+                        TableData.TableInfo.COURSEWORK_STU_ID+" = "+studentid+" AND "+
+                        TableData.TableInfo.COURSEWORK_COR_ID+" = "+courseName,null);
+    }
+
+    //add actual grade
+    public void addActualGrade(DatabaseHelper dbh,String courseWorkName, String courseName, String studentid, int actualGrade){
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.ACTUAL_GRADE,String.valueOf(actualGrade)); //These Fields should be your String values of actual column names
+        db.update(TableData.TableInfo.COURSEWORK_TABLE,cv,
+                TableData.TableInfo.COURSEWORK_NAME+" = "+courseWorkName+" AND "+
+                        TableData.TableInfo.COURSEWORK_STU_ID+" = "+studentid+" AND "+
+                        TableData.TableInfo.COURSEWORK_COR_ID+" = "+courseName,null);
+    }
+
+    /*get CourseWork list returning
+    courseworkname
+    actual grade
+    desired grade
+    passing grade
+    */
+    public Cursor getCourseWork(DatabaseHelper dbh, String courseName, String studentid){
+        Cursor cr;
+        SQLiteDatabase db = dbh.getWritableDatabase();
+        cr = db.query(TableData.TableInfo.COURSEWORK_TABLE, new String[]{TableData.TableInfo.COURSEWORK_NAME,
+                        TableData.TableInfo.ACTUAL_GRADE, TableData.TableInfo.DESIRED_GRADE, TableData.TableInfo.PASSING_GRADE},
+                TableData.TableInfo.COURSEWORK_COR_ID+ " = "+ courseName+" AND "+
+                TableData.TableInfo.COURSEWORK_STU_ID+ " = "+ studentid
+                ,null, null, null, null, null);
+        return cr;
+    }
 }
