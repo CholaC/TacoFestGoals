@@ -38,9 +38,7 @@ public class TableData {
         public static final String DESIRED_GRADE       =  "desired_grade";
         public static final String ACTUAL_GRADE        =  "actual_grade";
         public static final String DUE_DATE            =  "due_date";
-
-
-        //public static final String TOTAL_PASSING_GRADE =  "course_table"
+        
     }
 
 }
