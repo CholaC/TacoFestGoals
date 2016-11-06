@@ -39,28 +39,6 @@
         android:layout_width="fill_parent">
     </EditText>
 
-<<<<<<< HEAD
-        <TextView
-            android:text="#COURSE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="61dp"
-            android:id="@+id/cTitle"
-            android:textStyle="normal|bold"
-            android:textSize="50sp"
-            android:typeface="serif"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:layout_alignParentTop="true" />
-
-        <TextView
-            android:text="Course Code"
-            android:layout_marginTop="38dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cCode"
-            android:textColor="@android:color/white" />
-=======
     <TextView
         android:text="Total Desired Grade"
         android:layout_width="wrap_content"
@@ -78,7 +56,6 @@
         android:inputType="number"
         android:layout_width="fill_parent">
     </EditText>
->>>>>>> 6ba4ee50daedafac17be8a4336e104c3b646edfb
 
     <TextView
         android:text="Total Passing Grade"
@@ -112,9 +89,9 @@
 
     <Button
         android:layout_height="wrap_content"
-        android:text="FINISH"
+        android:text="SUBMIT"
         android:layout_width="fill_parent"
-        android:id="@+id/btnFinish"
+        android:id="@+id/btnSubmit"
         style="@style/Widget.AppCompat.Button.Colored"
         android:elevation="0dp">
     </Button>
@@ -123,26 +100,8 @@
         android:text="Continue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnProceed"
+        android:id="@+id/btnContinue"
         android:onClick="openAssignPage"></Button>
 
 
-<<<<<<< HEAD
-        <Button
-            android:layout_height="wrap_content"
-            android:text="ADD COURSE WORK"
-            android:layout_width="fill_parent"
-            android:id="@+id/button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:elevation="0dp"
-            android:onClick="openAssignPage"
-            android:background="@color/colorAccent"
-            android:layout_below="@+id/cCodeInfo"
-            android:layout_centerHorizontal="true">
-        </Button>
-    </LinearLayout>
-    
-</ScrollView>
-=======
 </LinearLayout>
->>>>>>> 6ba4ee50daedafac17be8a4336e104c3b646edfb

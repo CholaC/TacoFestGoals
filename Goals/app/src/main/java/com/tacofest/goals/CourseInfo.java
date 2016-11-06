@@ -1,82 +1,77 @@
+package com.tacofest.goals;
 
-    package com.tacofest.goals;
-
-    import android.content.Context;
-    import android.support.design.widget.FloatingActionButton;
-    import android.support.v7.app.AppCompatActivity;
-    import android.os.Bundle;
-    import android.widget.Button;
-    import android.widget.EditText;
-    import android.widget.ListView;
-    import android.widget.TextView;
-    import android.content.Intent;
-    import android.view.View;
+import android.content.Context;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.content.Intent;
+import android.view.View;
 
 //import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-    /**
-     * Created by okorisanipe on 2016-10-15.
-     */
+/**
+ * Created by okorisanipe on 2016-10-15.
+ */
 
-<<<<<<< HEAD
 public class CourseInfo extends AppCompatActivity {
-    EditText courseName;
-    TextView title;
-=======
-    public class CourseInfo extends AppCompatActivity {
-        TextView courseInfo;
-        EditText courseName, desiredGrade, passingGrade, lectureDate;
-        String coursename, studentid, lecturedate;
-        Integer desiredgrade, passinggrade;
-        Button uploadPdf;
-        Button proceed;
-        Button finish;
-        Context context = this;
->>>>>>> 6ba4ee50daedafac17be8a4336e104c3b646edfb
+    TextView courseInfo;
+    EditText courseName, desiredGrade, passingGrade, lectureDate;
+    String coursename, studentid, lecturedate;
+    Integer desiredgrade, passinggrade;
+    Button uploadPdf;
+    Button proceed;
+    Button finish;
+    Context context = this;
 
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_course_info);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_course_info);
 
-<<<<<<< HEAD
-        courseName = (EditText) findViewById(R.id.cCodeInfo);
-        title = (TextView) findViewById(R.id.title);
-    }
-=======
-            courseInfo = (TextView) findViewById(R.id.txtCourseInfo);
-            courseName = (EditText) findViewById(R.id.courseName);
-            desiredGrade = (EditText) findViewById(R.id.tDesiredGrade);
-            passingGrade = (EditText) findViewById(R.id.tPassingGrade);
-            lectureDate = (EditText) findViewById(R.id.txtlecdate);
-            uploadPdf = (Button) findViewById(R.id.btnPDF);
-            finish = (Button) findViewById(R.id.btnFinish);
-            proceed = (Button) findViewById(R.id.btnProceed);
+        courseInfo = (TextView) findViewById(R.id.txtCourseInfo);
+        courseName = (EditText) findViewById(R.id.courseName);
+        desiredGrade = (EditText) findViewById(R.id.tDesiredGrade);
+        passingGrade = (EditText) findViewById(R.id.tPassingGrade);
+        lectureDate = (EditText) findViewById(R.id.txtlecdate);
+        uploadPdf = (Button) findViewById(R.id.btnPDF);
+        finish = (Button) findViewById(R.id.btnFinish);
+        proceed = (Button) findViewById(R.id.btnProceed);
 
-            Intent intent = getIntent();
-            Bundle bd = intent.getExtras();
-            if(bd != null)
-            {
-                String getId = (String) bd.get("studentId");
-                courseInfo.setText(getId);
-            }
->>>>>>> 6ba4ee50daedafac17be8a4336e104c3b646edfb
-
-            finish.setOnClickListener( new View.OnClickListener() {
-                public void onClick(View v) {
-                    coursename = courseName.getText().toString();
-                    studentid = courseInfo.getText().toString();
-                    desiredgrade = Integer.parseInt(desiredGrade.getText().toString());
-                    passinggrade = Integer.parseInt(passingGrade.getText().toString());
-                    lecturedate = lectureDate.getText().toString();
-                    DatabaseHelper databaseHelper = new DatabaseHelper(context);
-                    databaseHelper.addCourse(databaseHelper,coursename,studentid,passinggrade,desiredgrade,lecturedate);
-                    databaseHelper.close();
-
-                    Intent i = new Intent(CourseInfo.this, CourseList.class);
-                    startActivity(i);
-                }
-            });
+        Intent intent = getIntent();
+        Bundle bd = intent.getExtras();
+        if(bd != null)
+        {
+            String getId = (String) bd.get("studentId");
+            courseInfo.setText(getId);
         }
+
+        finish.setOnClickListener( new View.OnClickListener() {
+            public void onClick(View v) {
+                coursename = courseName.getText().toString();
+                studentid = courseInfo.getText().toString();
+                desiredgrade = Integer.parseInt(desiredGrade.getText().toString());
+                passinggrade = Integer.parseInt(passingGrade.getText().toString());
+                lecturedate = lectureDate.getText().toString();
+                DatabaseHelper databaseHelper = new DatabaseHelper(context);
+                databaseHelper.addCourse(databaseHelper,coursename,studentid,passinggrade,desiredgrade,lecturedate);
+                databaseHelper.close();
+
+                Intent i = new Intent(CourseInfo.this, CourseList.class);
+                startActivity(i);
+            }
+        });
+
+        proceed.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+
+                Intent i = new Intent(CourseInfo.this, EnterAssign.class);
+                startActivity(i);
+            }
+        });
     }
+}
 
 
