@@ -98,5 +98,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.e("database operation","one row entered in course table ");
     }
 
-
 }
