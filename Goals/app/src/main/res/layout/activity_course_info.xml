@@ -17,17 +17,18 @@
             android:text="#COURSE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="61dp"
             android:id="@+id/cTitle"
             android:textStyle="normal|bold"
             android:textSize="50sp"
             android:typeface="serif"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="61dp" />
+            android:layout_alignParentTop="true" />
 
         <TextView
             android:text="Course Code"
+            android:layout_marginTop="38dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cCode"
@@ -78,7 +79,7 @@
 
         <Button
             android:layout_height="wrap_content"
-            android:text="CONTINUE"
+            android:text="ADD COURSE WORK"
             android:layout_width="fill_parent"
             android:id="@+id/button"
             style="@style/Widget.AppCompat.Button.Colored"

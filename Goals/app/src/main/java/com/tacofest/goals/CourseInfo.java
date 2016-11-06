@@ -17,17 +17,13 @@ import android.view.View;
 
 public class CourseInfo extends AppCompatActivity {
     EditText courseName;
-    EditText numAss;
-    EditText numTest;
     TextView title;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_info);
 
-        courseName = (EditText) findViewById(R.id.courseName);
-        numAss = (EditText) findViewById(R.id.numAss);
-        numTest = (EditText) findViewById(R.id.numTest);
+        courseName = (EditText) findViewById(R.id.cCodeInfo);
         title = (TextView) findViewById(R.id.title);
     }
 

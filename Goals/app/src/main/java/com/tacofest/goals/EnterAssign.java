@@ -31,6 +31,10 @@ public class EnterAssign extends AppCompatActivity {
         setContentView(R.layout.activity_enter_assign);
         infoList = (LinearLayout) findViewById(R.id.enterAInfoList);
         add = (FloatingActionButton) findViewById(R.id.addALayoutButton);
+
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View rowView = inflater.inflate(R.layout.assign_info_layout, null);
+        infoList.addView(rowView, infoList.getChildCount() - 1);
     }
 
     protected void addAInfoLayout(View v) {
@@ -40,7 +44,7 @@ public class EnterAssign extends AppCompatActivity {
     }
 
     protected void contToOffice(View v) {
-        Intent i = new Intent(this, EnterAssign.class);
+        Intent i = new Intent(this, EnterOffice.class);
         startActivity(i);
     }
 }
