@@ -1,15 +1,21 @@
 package com.tacofest.goals;
 
+import java.util.*;
+
+
 /**
  * Created by okorisanipe on 2016-11-02.
  */
 
 public class Course {
     private String id;
-    private int desGrade;
-    private int passGrade;
-    private int avgGrade;
+    private float desGrade;
+    private float passGrade;
+    private float avgGrade;
+    private float reqGrade;
+    private float percentComplete;
     private Student student;
+    private ArrayList<CourseWork> courseWork;
     //needs time object for lecture and office hours
 
     Course() {
@@ -20,20 +26,56 @@ public class Course {
         student = new Student();
     }
 
-    Course(String ID, int des, int pass, Student s) {
+    Course(String ID, float des, float pass, Student s) {
         id = ID;
         desGrade = des;
         passGrade = pass;
+        avgGrade = 0;
+        percentComplete = 0;
+        reqGrade = 0;
         student = s;
+        courseWork = new ArrayList<CourseWork>();
     }
 
     String getId() { return id; }
-    int getDesGrade() { return desGrade; }
-    int getPassGrade() { return passGrade; }
-    int getAvgGrade() { return avgGrade; }
+    float getDesGrade() { return desGrade; }
+    float getPassGrade() { return passGrade; }
+    float getAvgGrade() { return avgGrade; }
+    float getReqGrade() { return reqGrade; }
+    float getPercentComplete() { return percentComplete; }
     Student getStudent() { return student; }
 
     void setId(String ID) { id = ID; }
-    void setDesGrade(int grade) { desGrade = grade; }
-    void setAvgGrade(int grade) { avgGrade = grade; }
+    void setDesGrade(float grade) { desGrade = grade; }
+
+    private void setAvgGrade() {
+        float sum = 0;
+        for (int i = 0; i < courseWork.size(); i++) {
+            if(courseWork.get(i).getActualGrade() > 0) {
+                sum += courseWork.get(i).getActualGrade()*courseWork.get(i).getWeight();
+            }
+        }
+        avgGrade = sum/percentComplete;
+    }
+
+    private void setPercentComplete(CourseWork c) {
+        percentComplete += c.getWeight();
+    }
+
+    private void setReqGrade(CourseWork c) {
+        reqGrade = (desGrade*100 - avgGrade*percentComplete)/(100 - percentComplete);
+    }
+
+    private void setPassGrade(CourseWork c) {
+        passGrade = (passGrade*100 - avgGrade*percentComplete)/(100 - percentComplete);
+    }
+
+    void addCourseWork(CourseWork c) {
+        courseWork.add(c);
+        setPercentComplete(c);
+        setAvgGrade();
+        setReqGrade(c);
+        setPassGrade(c);
+    }
+    
 }
