@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app=" "
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark">
+
 
     <TextView
         android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/aNameTitle" />
+        android:id="@+id/aNameTitle"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:text="Due Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/aName"
-        android:id="@+id/dDateTitle" />
+        android:id="@+id/dDateTitle"
+        android:textColor="@android:color/background_light"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,7 +59,8 @@
         android:id="@+id/aName"
         android:layout_below="@+id/aNameTitle"
         android:layout_alignParentStart="true"
-        android:hint="E.g. Roman civ. paper" />
+        android:hint="E.g. Roman civ. paper"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="%"
@@ -64,5 +70,18 @@
         android:layout_alignBaseline="@+id/aWeight"
         android:layout_alignBottom="@+id/aWeight"
         android:layout_toEndOf="@+id/aWeight"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textColor="@android:color/background_light"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightTitle"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/aName"
+        android:layout_toEndOf="@+id/dDate" />
+
+
 </RelativeLayout>
