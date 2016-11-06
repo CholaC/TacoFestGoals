@@ -41,17 +41,15 @@ public class StudentLogIn extends AppCompatActivity {
                databaseHelper.close();
                Toast.makeText(getApplicationContext(),Environment.getDataDirectory().toString(),Toast.LENGTH_LONG).show();
                Intent i = new Intent(StudentLogIn.this, CourseList.class);
+               i.putExtra("studentId", studentid);
                startActivity(i);
            }
        });
         btnsignIn.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
-                //username = studentName.getText().toString();
-                //studentid = studentID.getText().toString();
-                //DatabaseHelper databaseHelper = new DatabaseHelper(context);
-                //databaseHelper.checkStudentdata(databaseHelper,studentid,username);
-                //databaseHelper.close();
+                studentid = studentID.getText().toString();
                 Intent i = new Intent(StudentLogIn.this, CourseList.class);
+                i.putExtra("studentId", studentid);
                 startActivity(i);
             }
         });

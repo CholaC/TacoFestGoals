@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimaryDark">
+    android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="64dp"
-        android:paddingRight="64dp"
-        >
+    <TextView
+        android:text="Course Info"
+        android:textSize="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/txtCourseInfo" />
 
+    <Button
+        android:text="Upload PDF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPDF" />
+
+    <TextView
+        android:text="Course Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <EditText
+        android:id="@+id/courseName"
+        android:layout_height="wrap_content"
+        android:hint="COMP1234"
+        android:inputType="text"
+        android:layout_width="fill_parent">
+    </EditText>
+
+<<<<<<< HEAD
         <TextView
             android:text="#COURSE"
             android:layout_width="wrap_content"
@@ -33,50 +60,74 @@
             android:layout_height="wrap_content"
             android:id="@+id/cCode"
             android:textColor="@android:color/white" />
+=======
+    <TextView
+        android:text="Total Desired Grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/txtDesiredGrade" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="COMP1234"
-            android:ems="10"
-            android:layout_below="@id/cCode"
-            android:id="@+id/cCodeInfo" />
+    <EditText
+        android:id="@+id/tDesiredGrade"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:inputType="number"
+        android:layout_width="fill_parent">
+    </EditText>
+>>>>>>> 6ba4ee50daedafac17be8a4336e104c3b646edfb
 
-        <TextView
-            android:text="Goal Grade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cCodeInfo"
-            android:id="@+id/dGrade"
-            android:textColor="@android:color/white" />
+    <TextView
+        android:text="Total Passing Grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="85"
-            android:ems="10"
-            android:layout_below="@id/dGrade"
-            android:id="@+id/dGradeInfo" />
+    <EditText
+        android:id="@+id/tPassingGrade"
+        android:layout_height="wrap_content"
+        android:hint="5"
+        android:inputType="number"
+        android:layout_width="fill_parent">
+    </EditText>
 
-        <TextView
-            android:text="Passing Grade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dGradeInfo"
-            android:id="@+id/pGrade"
-            android:textColor="@android:color/white" />
+    <TextView
+        android:text="Lecture Date and Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="50"
-            android:ems="10"
-            android:layout_below="@id/pGrade"
-            android:id="@+id/pGradeInfo" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/txtlecdate"
+        android:inputType="text" />
 
+    <Button
+        android:layout_height="wrap_content"
+        android:text="FINISH"
+        android:layout_width="fill_parent"
+        android:id="@+id/btnFinish"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:elevation="0dp">
+    </Button>
+
+    <Button
+        android:text="Continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnProceed"
+        android:onClick="openAssignPage"></Button>
+
+
+<<<<<<< HEAD
         <Button
             android:layout_height="wrap_content"
             android:text="ADD COURSE WORK"
@@ -92,3 +143,6 @@
     </LinearLayout>
     
 </ScrollView>
+=======
+</LinearLayout>
+>>>>>>> 6ba4ee50daedafac17be8a4336e104c3b646edfb
