@@ -34,12 +34,26 @@
         <activity
             android:name=".editGrades"
             android:label="@string/title_activity_edit_grades"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".CourseList">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        
+        <activity
+            android:name=".StudentProfile"
+            android:label="StudentProfile"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        
+        <activity
+            android:name=".CourseProfile"
+            android:label="CourseProfile"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        
+        <activity
+            android:name=".CourseInfo"
+            android:label="CourseInfo"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

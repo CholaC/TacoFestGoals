@@ -59,7 +59,8 @@ public class CourseInfo extends AppCompatActivity {
                 databaseHelper.addCourse(databaseHelper,coursename,studentid,passinggrade,desiredgrade,lecturedate);
                 databaseHelper.close();
 
-                Intent i = new Intent(CourseInfo.this, CourseList.class);
+                Intent i = new Intent(CourseInfo.this, StudentProfile.class);
+                i.putExtra("courseName",coursename);
                 startActivity(i);
             }
         });

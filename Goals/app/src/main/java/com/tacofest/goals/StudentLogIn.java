@@ -39,8 +39,7 @@ public class StudentLogIn extends AppCompatActivity {
                DatabaseHelper databaseHelper = new DatabaseHelper(context);
                databaseHelper.addStudentdata(databaseHelper,studentid,username);
                databaseHelper.close();
-               Toast.makeText(getApplicationContext(),Environment.getDataDirectory().toString(),Toast.LENGTH_LONG).show();
-               Intent i = new Intent(StudentLogIn.this, CourseList.class);
+               Intent i = new Intent(StudentLogIn.this, StudentProfile.class);
                i.putExtra("studentId", studentid);
                startActivity(i);
            }
@@ -48,7 +47,7 @@ public class StudentLogIn extends AppCompatActivity {
         btnsignIn.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 studentid = studentID.getText().toString();
-                Intent i = new Intent(StudentLogIn.this, CourseList.class);
+                Intent i = new Intent(StudentLogIn.this, StudentProfile.class);
                 i.putExtra("studentId", studentid);
                 startActivity(i);
             }

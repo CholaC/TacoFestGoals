@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:text="SUBMIT"
         android:layout_width="fill_parent"
-        android:id="@+id/btnSubmit"
+        android:id="@+id/btnFinish"
         style="@style/Widget.AppCompat.Button.Colored"
         android:elevation="0dp">
     </Button>
@@ -100,7 +100,7 @@
         android:text="Continue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnContinue"
+        android:id="@+id/btnProceed"
         android:onClick="openAssignPage"></Button>
 
 

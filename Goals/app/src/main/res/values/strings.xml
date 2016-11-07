@@ -111,6 +111,7 @@
     <string name="title_activity_grade_detiles">gradeDetiles</string>
     <string name="title_activity_edit_grades">editGrades</string>
     <string name="activity_course_list">CourseList</string>
+    <string name="courses">Courses</string>
     <string-array name="days">
         <item>Sunday</item>
         <item>Monday</item>
