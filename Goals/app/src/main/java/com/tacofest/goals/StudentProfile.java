@@ -24,13 +24,13 @@ public class StudentProfile extends AppCompatActivity {
         final TextView txtStudentID = (TextView) findViewById(R.id.txtStudentID);
 
         Intent i = getIntent();
-        String id = i.getStringExtra("studentId");
+        final String studentId = i.getStringExtra("studentId");
         String username = i.getStringExtra("username");
         String newCourse = i.getStringExtra("courseName");
 
 
         txtUsername.setText(username);
-        txtStudentID.setText(id);
+        txtStudentID.setText(studentId);
 
         addCourse = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         txtCourse = (TextView) findViewById(R.id.txtCourse);
@@ -41,6 +41,7 @@ public class StudentProfile extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(StudentProfile.this,CourseProfile.class);
+                i.putExtra("studentId",studentId);
                 i.putExtra("courseName",values[position]);
                 startActivity(i);
             }
@@ -50,6 +51,7 @@ public class StudentProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(StudentProfile.this,CourseInfo.class);
+                i.putExtra("studentId",studentId);
                 startActivity(i);
             }
         });
