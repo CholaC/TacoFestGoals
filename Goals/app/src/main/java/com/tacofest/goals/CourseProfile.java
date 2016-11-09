@@ -23,9 +23,15 @@ public class CourseProfile extends AppCompatActivity {
         progressReport = (Button) findViewById(R.id.btnprogressreport);
         schedule = (Button) findViewById(R.id.btnschedule);
 
+        Intent i = getIntent();
+        final String studentid = i.getStringExtra("studentId");
+        final String courseId = i.getStringExtra("courseName");
+
         grade.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(CourseProfile.this, gradeDetiles.class);
+                i.putExtra("courseName", courseId);
+                i.putExtra("studentId", studentid);
                 startActivity(i);
             }
         }

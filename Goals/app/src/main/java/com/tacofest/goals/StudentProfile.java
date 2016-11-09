@@ -24,7 +24,7 @@ public class StudentProfile extends AppCompatActivity {
         final TextView txtStudentID = (TextView) findViewById(R.id.txtStudentID);
 
         Intent i = getIntent();
-        String id = i.getStringExtra("studentId");
+        final String id = i.getStringExtra("studentId");
         String username = i.getStringExtra("username");
         String newCourse = i.getStringExtra("courseName");
 
@@ -42,6 +42,7 @@ public class StudentProfile extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(StudentProfile.this,CourseProfile.class);
                 i.putExtra("courseName",values[position]);
+                i.putExtra("studentId", id);
                 startActivity(i);
             }
         });
@@ -50,6 +51,7 @@ public class StudentProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(StudentProfile.this,CourseInfo.class);
+                i.putExtra("studentid", id);
                 startActivity(i);
             }
         });
