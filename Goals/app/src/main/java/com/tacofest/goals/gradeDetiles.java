@@ -7,10 +7,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class gradeDetiles extends AppCompatActivity {
 
     FloatingActionButton btneditGrades;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,9 +22,16 @@ public class gradeDetiles extends AppCompatActivity {
 
         btneditGrades = (FloatingActionButton) findViewById(R.id.fbtnEditGrades);
 
+        Intent i = getIntent();
+        final String studentid = i.getStringExtra("studentId");
+        final String courseId = i.getStringExtra("courseName");
+
         btneditGrades.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(gradeDetiles.this, editGrades.class);
+                i.putExtra("courseName", courseId);
+                i.putExtra("studentId", studentid);
+
                 startActivity(i);
             }
         });

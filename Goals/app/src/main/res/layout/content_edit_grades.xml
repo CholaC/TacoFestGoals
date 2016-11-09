@@ -119,78 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Assignment"
-                android:textColor="@android:color/white"/>
-
-            <EditText
-                android:width="1px"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textSize="14sp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="3"
-                android:text="       -"
-                android:textColor="@android:color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="4"
-                android:text="       -"
-                android:textColor="@android:color/white"/>
-
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:text="Test"
-                android:textColor="@android:color/white"/>
-
-            <EditText
-                android:width="1px"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="3"
-                android:text="       -"
-                android:textColor="@android:color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="4"
-                android:text="       -"
-                android:textColor="@android:color/white"/>
-
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:text="Test"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:id="@+id/txtAssignment1"/>
 
             <EditText
                 android:width="1px"
@@ -198,7 +128,82 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:textSize="14sp"
-                />
+                android:id="@+id/ass1Grade"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:text="       -"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="4"
+                android:text="       -"
+                android:textColor="@android:color/white"/>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Test"
+                android:textColor="@android:color/white"
+                android:id="@+id/txtTest1"/>
+
+            <EditText
+                android:width="1px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:id="@+id/test1Grade"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:text="       -"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="4"
+                android:text="       -"
+                android:textColor="@android:color/white"/>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:text="Test"
+                android:textColor="@android:color/white"
+                android:id="@+id/txtTest2"/>
+
+            <EditText
+                android:width="1px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:id="@+id/test2Grade"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -226,14 +231,16 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Assignment"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:id="@+id/txtAssignment2"/>
 
             <EditText
                 android:width="1px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:id="@+id/ass2Grade"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -261,14 +268,16 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:text="Exam"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:id="@+id/txtExam"/>
 
             <EditText
                 android:width="1px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:id="@+id/examGrade"/>
 
             <TextView
                 android:layout_width="wrap_content"
