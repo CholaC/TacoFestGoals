@@ -1,5 +1,6 @@
 package com.tacofest.goals;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,7 @@ public class editGrades extends AppCompatActivity {
     int as1Grade, as2Grade, te1Grade, te2Grade,examGrade;
     TextView txtAss1, txtAss2, txtTest1, txtTest2, txtExam;
     String txtass1, txtass2, txttest1, txttest2, txtexam;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +39,36 @@ public class editGrades extends AppCompatActivity {
         txtTest2 = (TextView) findViewById(R.id.txtTest2);
         txtExam =  (TextView) findViewById(R.id.txtExam);
 
+
         Intent i = getIntent();
         final String studentid = i.getStringExtra("studentId");
         final String courseId = i.getStringExtra("courseName");
 
+        as1Grade  = Integer.parseInt(asGrade1.getText().toString());
+        as2Grade  = Integer.parseInt(asGrade2.getText().toString());
+        te1Grade  = Integer.parseInt(teGrade1.getText().toString());
+        te2Grade  = Integer.parseInt(teGrade2.getText().toString());
+        examGrade = Integer.parseInt(exGrade.getText().toString());
+
+        txtass1 = txtAss1.getText().toString();
+        txtass2 = txtAss2.getText().toString();
+        txttest1 = txtTest1.getText().toString();
+        txttest2 = txtTest2.getText().toString();
+        txtexam = txtExam.getText().toString();
+
+
         btnsaveGrade.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(editGrades.this, gradeDetiles.class);
 
+                DatabaseHelper databaseHelper = new DatabaseHelper(context);
+                databaseHelper.addActualGrade(databaseHelper,txtass1,courseId,studentid,as1Grade);
+                databaseHelper.addActualGrade(databaseHelper,txtass2,courseId,studentid,as2Grade);
+                databaseHelper.addActualGrade(databaseHelper,txttest1,courseId,studentid,te1Grade);
+                databaseHelper.addActualGrade(databaseHelper,txttest2,courseId,studentid,te2Grade);
+                databaseHelper.addActualGrade(databaseHelper,txtexam,courseId,studentid,examGrade);
+                databaseHelper.close();
+
+                Intent i = new Intent(editGrades.this, gradeDetiles.class);
                 i.putExtra("courseName", courseId);
                 i.putExtra("studentId", studentid);
                 startActivity(i);

@@ -41,6 +41,7 @@ public class StudentLogIn extends AppCompatActivity {
                databaseHelper.close();
                Intent i = new Intent(StudentLogIn.this, StudentProfile.class);
                i.putExtra("studentId", studentid);
+               i.putExtra("userName", username);
                startActivity(i);
            }
        });
@@ -49,6 +50,7 @@ public class StudentLogIn extends AppCompatActivity {
                 studentid = studentID.getText().toString();
                 Intent i = new Intent(StudentLogIn.this, StudentProfile.class);
                 i.putExtra("studentId", studentid);
+                i.putExtra("username", username);
                 startActivity(i);
             }
         });

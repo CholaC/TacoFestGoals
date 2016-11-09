@@ -21,7 +21,7 @@ public class CourseInfo extends AppCompatActivity {
     TextView courseInfo;
     EditText courseName, desiredGrade, passingGrade, lectureDate;
     String coursename, studentid, lecturedate;
-    Integer desiredgrade, passinggrade;
+    int desiredgrade, passinggrade;
     Button uploadPdf;
     Button proceed;
     Button finish;
@@ -40,6 +40,7 @@ public class CourseInfo extends AppCompatActivity {
         finish = (Button) findViewById(R.id.btnFinish);
         proceed = (Button) findViewById(R.id.btnProceed);
 
+
         Intent intent = getIntent();
         Bundle bd = intent.getExtras();
         if(bd != null)
@@ -47,13 +48,15 @@ public class CourseInfo extends AppCompatActivity {
             String getId = (String) bd.get("studentId");
             courseInfo.setText(getId);
         }
+        coursename = courseName.getText().toString();
+        studentid = courseInfo.getText().toString();
 
         finish.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
-                coursename = courseName.getText().toString();
-                studentid = courseInfo.getText().toString();
+                //cast int here
                 desiredgrade = Integer.parseInt(desiredGrade.getText().toString());
                 passinggrade = Integer.parseInt(passingGrade.getText().toString());
+
                 lecturedate = lectureDate.getText().toString();
                 DatabaseHelper databaseHelper = new DatabaseHelper(context);
                 databaseHelper.addCourse(databaseHelper,coursename,studentid,passinggrade,desiredgrade,lecturedate);
@@ -67,8 +70,16 @@ public class CourseInfo extends AppCompatActivity {
 
         proceed.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                //cast int here
+                desiredgrade = Integer.parseInt(desiredGrade.getText().toString());
+                passinggrade = Integer.parseInt(passingGrade.getText().toString());
 
+                DatabaseHelper databaseHelper = new DatabaseHelper(context);
+                databaseHelper.addCourse(databaseHelper,coursename,studentid,passinggrade,desiredgrade,lecturedate);
+                databaseHelper.close();
                 Intent i = new Intent(CourseInfo.this, EnterAssign.class);
+                i.putExtra("courseName", coursename);
+                i.putExtra("studentId", studentid);
                 startActivity(i);
             }
         });
