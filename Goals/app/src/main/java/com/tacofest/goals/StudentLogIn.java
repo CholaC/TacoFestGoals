@@ -18,6 +18,7 @@ public class StudentLogIn extends AppCompatActivity {
     EditText studentName, studentID;
     Button btnsignIn, btnsignUp;
     String username, studentid;
+    int login;
     Context context = this;
     //SQLiteDatabase db;
 
@@ -36,21 +37,25 @@ public class StudentLogIn extends AppCompatActivity {
            public void onClick(View v) {
                username = studentName.getText().toString();
                studentid = studentID.getText().toString();
-               DatabaseHelper databaseHelper = new DatabaseHelper(context);
-               databaseHelper.addStudentdata(databaseHelper,studentid,username);
+               login = 2;
+               DatabaseHelper databaseHelper = DatabaseHelper.getInstance(context);
+               databaseHelper.addStudentdata(studentid,username);
                databaseHelper.close();
                Intent i = new Intent(StudentLogIn.this, StudentProfile.class);
                i.putExtra("studentId", studentid);
                i.putExtra("userName", username);
+               i.putExtra("login",login);
                startActivity(i);
            }
        });
         btnsignIn.setOnClickListener( new View.OnClickListener() {
             public void onClick(View v) {
                 studentid = studentID.getText().toString();
+                login = 1;
                 Intent i = new Intent(StudentLogIn.this, StudentProfile.class);
                 i.putExtra("studentId", studentid);
                 i.putExtra("username", username);
+                i.putExtra("login",login);
                 startActivity(i);
             }
         });
