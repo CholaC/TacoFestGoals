@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/addOffice"
             android:id="@+id/fin"
-            android:background="@color/colorAccent"/>
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/darker_gray" />
     </RelativeLayout>
 </LinearLayout>
     </ScrollView>
