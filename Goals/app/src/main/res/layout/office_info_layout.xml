@@ -23,7 +23,8 @@
         android:layout_below="@+id/pName"
         android:layout_alignParentStart="true"
         android:id="@+id/pNameInfo"
-        android:hint="Prof or TA name" />
+        android:hint="Prof or TA name"
+        android:textColor="@android:color/darker_gray" />
 
     <TextView
         android:text="Day"
@@ -60,6 +61,7 @@
         android:id="@+id/editText"
         android:layout_below="@+id/officeTime"
         android:layout_alignStart="@+id/officeTime"
-        android:hint="HH:MM" />
+        android:hint="HH:MM"
+        android:textColor="@android:color/darker_gray" />
 
 </RelativeLayout>

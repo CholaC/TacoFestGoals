@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app=""
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tacofest.goals.StudentProfile">
+    tools:context="com.tacofest.goals.StudentProfile"
+    android:background="@color/colorPrimaryDark">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -23,12 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/darker_gray" />
     <TextView
         android:id="@+id/txtStudentID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/darker_gray" />
 
 
     <TextView
@@ -37,12 +41,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:id="@+id/txtCourse"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@android:color/darker_gray" />
 
     <ListView
         android:id="@+id/courseList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="11dp" />
+        android:layout_marginTop="11dp"
+        android:cacheColorHint="@android:color/darker_gray" />
 
 </LinearLayout>

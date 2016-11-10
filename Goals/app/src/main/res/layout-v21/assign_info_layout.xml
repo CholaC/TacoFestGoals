@@ -3,7 +3,7 @@
     xmlns:app=" "
     xmlns:app2="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark">
 
 
@@ -23,16 +23,6 @@
         android:id="@+id/dDateTitle"
         android:textColor="@android:color/background_light"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/dDate"
-        android:layout_below="@+id/dDateTitle"
-        android:layout_alignParentStart="true"
-        android:hint="DD-MM-YYYY" />
-
     <TextView
         android:text="Weight"
         android:layout_width="wrap_content"
@@ -40,16 +30,6 @@
         android:layout_above="@+id/dDate"
         android:layout_toEndOf="@+id/aName"
         android:id="@+id/aWeightTitle" />
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/aWeight"
-        android:layout_below="@+id/aWeightTitle"
-        android:layout_toEndOf="@+id/dDate"
-        android:inputType="number"
-        android:hint="6.5"
-        android:layout_width="50dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -60,7 +40,8 @@
         android:layout_below="@+id/aNameTitle"
         android:layout_alignParentStart="true"
         android:hint="E.g. Roman civ. paper"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/darker_gray" />
 
     <TextView
         android:text="%"
@@ -74,6 +55,28 @@
         android:textColor="@android:color/background_light"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_alignParentStart="true"
+        android:background="@android:drawable/ic_menu_my_calendar"
+        android:layout_alignBottom="@+id/aPercent"
+        android:layout_alignEnd="@+id/dDateTitle" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/aWeight"
+        android:inputType="number"
+        android:hint="6.5"
+        android:layout_width="50dp"
+        android:layout_below="@+id/weightTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="138dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@android:color/darker_gray" />
+
     <TextView
         android:text="Weight"
         android:layout_width="wrap_content"
@@ -81,7 +84,7 @@
         android:id="@+id/weightTitle"
         android:textColor="@android:color/background_light"
         android:layout_below="@+id/aName"
-        android:layout_toEndOf="@+id/dDate" />
+        android:layout_alignEnd="@+id/aWeight" />
 
 
 </RelativeLayout>
