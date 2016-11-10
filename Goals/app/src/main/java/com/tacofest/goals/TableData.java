@@ -23,6 +23,9 @@ public class TableData {
         public static final String COURSE_STU_ID        =  "course_stu_id";
         public static final String TOTAL_PASSING_GRADE  =  "total_passing_grade";
         public static final String TOTAL_DESIRED_GRADE  =  "total_desired_grade";
+        public static final String REQUIRED_DES_GRADE   =  "required_des_grade";
+        public static final String REQUIRED_PASS_GRADE  =  "required_pass_grade";
+        public static final String PERCENT_COMPLETED    =  "percent_completed";
         public static final String FINAL_GRADE          =  "final_grade";
         public static final String AVERAGE_GRADE        =  "average_grade";
         public static final String LECTURE_TIME         =  "lecture_time";
@@ -38,7 +41,7 @@ public class TableData {
         public static final String DESIRED_GRADE       =  "desired_grade";
         public static final String ACTUAL_GRADE        =  "actual_grade";
         public static final String DUE_DATE            =  "due_date";
-        
+
     }
 
 }
