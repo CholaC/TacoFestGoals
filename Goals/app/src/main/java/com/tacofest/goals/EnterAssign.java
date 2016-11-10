@@ -46,17 +46,17 @@
             LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View rowView = inflater.inflate(R.layout.assign_info_layout, null);
             infoList.addView(rowView, infoList.getChildCount() - 1);
-         
+
             RelativeLayout cworkInfo = (RelativeLayout) infoList.getChildAt(count);
             setVars(cworkInfo);
-         
-            DatabaseHelper databaseHelper = DatabaseHelper.getInstance(context);
-            databaseHelper.addCourseWork(course,studentId,name,ddate,weight);
-            databaseHelper.close();
+            add2DB(course,studentId,name,ddate,weight);
             count++;
         }
      
         protected void contToOffice(View v) {
+            RelativeLayout cworkInfo = (RelativeLayout) infoList.getChildAt(count);
+            setVars(cworkInfo);
+            add2DB(course,studentId,name,ddate,weight);
             Intent i = new Intent(this, EnterOffice.class);
             startActivity(i);
         }
@@ -74,6 +74,12 @@
             name = arr[2];
             ddate = arr[0];
             weight = Integer.parseInt(arr[1]);
+        }
+
+        private void add2DB(String course, String id, String item, String date, int weight) {
+            DatabaseHelper databaseHelper = DatabaseHelper.getInstance(context);
+            databaseHelper.addCourseWork(course, id, item, date, weight);
+            databaseHelper.close();
         }
     }
  
