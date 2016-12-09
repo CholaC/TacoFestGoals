@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tacofest.goals">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".StudentLogIn">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".gradeDetiles"
+            android:label="@string/title_activity_grade_detiles"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".editGrades"
+            android:label="@string/title_activity_edit_grades"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        
+        <activity
+            android:name=".StudentProfile"
+            android:label="StudentProfile"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        
+        <activity
+            android:name=".CourseProfile"
+            android:label="CourseProfile"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        
+        <activity
+            android:name=".CourseInfo"
+            android:label="CourseInfo"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".EnterOffice"
+            android:label="EnterOffice"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".EnterAssign"
+            android:label="EnterAssign"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".EnterActual"
+            android:label="EnterActual"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Graph"
+            android:label="Graph"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".BasicActivity"
+            android:label="BasicActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>

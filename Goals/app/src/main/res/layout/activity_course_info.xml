@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            app:toolbarId="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            app:contentScrim="?attr/colorPrimary">
+
+            <TextView
+                android:text="#Goals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:text="Course Info"
+                android:textSize="12pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:id="@+id/txtCourseInfo"
+                android:textColor="@android:color/darker_gray" />
+
+            <TextView
+                android:text="Course Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/courseName"
+                android:layout_height="wrap_content"
+                android:hint="COMP1234"
+                android:inputType="text"
+                android:layout_width="fill_parent"
+                android:textColor="?attr/colorButtonNormal"></EditText>
+
+            <TextView
+                android:text="Total Desired Grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:id="@+id/txtDesiredGrade"
+                android:textColor="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/tDesiredGrade"
+                android:layout_height="wrap_content"
+                android:hint="5"
+                android:inputType="number"
+                android:layout_width="fill_parent"
+                android:textColor="?android:attr/colorButtonNormal"></EditText>
+
+            <TextView
+                android:text="Total Passing Grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/tPassingGrade"
+                android:layout_height="wrap_content"
+                android:hint="5"
+                android:inputType="number"
+                android:layout_width="fill_parent"
+                android:textColor="?attr/colorButtonNormal"></EditText>
+
+            <RelativeLayout
+                android:id="@+id/lectureLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Lecture Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/spinner"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/textView"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@android:color/darker_gray" />
+
+                <Button
+                    android:text="END TIME"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lEndTime"
+                    android:layout_below="@+id/textView"
+                    android:layout_alignParentEnd="true"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/darker_gray" />
+
+                <Button
+                    android:text="START TIME"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lStartTime"
+                    android:layout_alignBaseline="@+id/lEndTime"
+                    android:layout_alignBottom="@+id/lEndTime"
+                    android:layout_toStartOf="@+id/lEndTime"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/darker_gray" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/days"
+                    android:layout_alignBaseline="@+id/lStartTime"
+                    android:layout_alignBottom="@+id/lStartTime"
+                    android:layout_alignParentStart="true"
+                    android:popupBackground="@android:color/darker_gray"></Spinner>
+            </RelativeLayout>
+
+            <Button
+                android:layout_height="wrap_content"
+                android:text="SUBMIT"
+                android:layout_width="fill_parent"
+                android:id="@+id/btnFinish"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:elevation="0dp"
+                android:textColor="?attr/colorButtonNormal"></Button>
+
+            <Button
+                android:text="Continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnProceed"
+                android:onClick="openAssignPage"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@android:color/darker_gray"></Button>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

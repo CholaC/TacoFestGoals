@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app=" "
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/dueDate">
+
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:id="@+id/aNameTitle"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:text="Due Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aName"
+        android:id="@+id/dDateTitle"
+        android:textColor="@android:color/background_light"/>
+
+    <TextView
+        android:text="Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aWeight"
+        android:layout_toEndOf="@+id/aName"
+        android:id="@+id/aWeightTitle" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/aName"
+        android:layout_below="@+id/aNameTitle"
+        android:layout_alignParentStart="true"
+        android:hint="E.g. Roman civ. paper"
+        android:layout_alignParentEnd="true"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:text="%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aPercent"
+        android:layout_alignBaseline="@+id/aWeight"
+        android:layout_alignBottom="@+id/aWeight"
+        android:layout_toEndOf="@+id/aWeight"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textColor="@android:color/background_light"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateBtn"
+        android:background="@android:drawable/ic_menu_my_calendar"
+        android:layout_alignBottom="@+id/aWeight"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/dDateTitle" />
+
+    <TextView
+        android:text="Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weightTitle"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/aName"
+        android:layout_alignStart="@+id/aWeight" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/aWeight"
+        android:inputType="number"
+        android:hint="6.5"
+        android:layout_width="50dp"
+        android:layout_marginTop="13dp"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_marginStart="40dp"
+        android:layout_below="@+id/weightTitle"
+        android:layout_toEndOf="@+id/dateText" />
+
+    <TextView
+        android:text="MM/DD/YYYY"
+        android:id="@+id/dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignBaseline="@+id/aWeight"
+        android:layout_alignBottom="@+id/aWeight"
+        android:layout_toEndOf="@+id/dateBtn" />
+
+
+</RelativeLayout>
